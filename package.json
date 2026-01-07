@@ -1,7 +1,8 @@
 {
   "name": "onion-site",
   "version": "1.0.0",
-  "scripts": {
+  "main":"serverjs",
+    "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
