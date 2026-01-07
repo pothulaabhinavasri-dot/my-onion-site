@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transaction</title>
+
+<style>
+  
+body{
+  font-family: Arial, sans-serif;
+  padding:30px;
+  background: url("images/bg.jpg")
+}
+
+.box {
+    background: hsla(226, 47%, 45%, 0.92); /* semi-transparent */
+    max-width: 450px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(26, 32, 7, 0.3);
+}
+
+
+
+h2,h3{text-align:center}
+
+button{
+  padding:8px 14px;
+  margin:5px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  background:#5ba0e9;
+  color:#fff;
+}
+
+button:hover{opacity:.9}
+
+#timer{
+  text-align:center;
+  font-size:18px;
+  color:rgb(0, 255, 179);
+  margin-bottom:15px;
+}
+
+#networks, #payment{
+  text-align:center;
+  margin-top:15px;
+}
+
+.qr img{
+  margin:10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Transaction Details</h2>
+
+<p>Transaction ID: <b id="txn"></b></p>
+<p>Amount (Get): <b id="amount"></b></p>
+<p>Pay: <b id="pay"></b></p>
+
+<div id="timer">5:00</div>
+
+<hr>
+
+<div style="text-align:center;">
+  <button onclick="btc()">Bitcoin</button>
+  <button onclick="usdt()">USDT</button>
+  <button onclick="bnb()">BNB</button>
+</div>
+
+<div id="networks"></div>
+<div id="payment"></div>
+
+</div>
+
+<script>
+/* ===== GET URL DATA ===== */
+const params = new URLSearchParams(window.location.search);
+document.getElementById("txn").textContent = params.get("txn") || "N/A";
+document.getElementById("amount").textContent = params.get("amount") || "0";
+document.getElementById("pay").textContent = params.get("pay") || "0";
+
+/* ===== TIMER ===== */
+let t = 300;
+const timerEl = document.getElementById("timer");
+setInterval(()=>{
+ if(t>0){
+  t--;
+  let m=Math.floor(t/60);
+  let s=t%60;
+  timerEl.innerHTML=`${m}:${s<10?'0':''}${s}`;
+ }
+},1000);
+
+/* ===== WALLET ADDRESSES ===== */
+const ADDR={
+ BTC:{
+  BTC:"12ohHsVkAvb7EhizyhBiUz89S7KwYLEVdG",
+  SEGWITBTC:"bc1qyycw0gqh940putldyu9r2tcmfgxlseql5yg93c",
+  BSC:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  ETH:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51"
+ },
+ USDT:{
+  TRX:"TDEVr86NLXvDeWbjZdiA6jJG3g5aPqk7R7",
+  BSC:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  APT:"0x942044e37aa91bbd733c00804abf453a50447c8a6a191594d599feaf3371dc52",
+  ETH:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  POL:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  PLASMA:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  ARBITRUM:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  SOL:"Fx1wiNBe5o1NR3X5Ekmut8NLNFNGekp2cYztxjfPNkar",
+  CELO:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  KAIA:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  KAVAEVM:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  DOT:"15gAovJcCaWzE8LTtrxxKpUCVUz4EmuVRu18P4xwvakt2pQz"
+ },
+ BNB:{
+  BEP20:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  OPBNB:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51",
+  ERC20:"0xf0ea488190cf1d460bcbd1834c4af5b50a093a51"
+ }
+};
+
+const networks=document.getElementById("networks");
+const payment=document.getElementById("payment");
+
+/* ===== NETWORKS ===== */
+function btc(){
+ networks.innerHTML=`
+  <h3>Bitcoin Networks</h3>
+  <button onclick="pay('BTC','BTC')">Bitcoin</button>
+  <button onclick="pay('BTC','SEGWITBTC')">SEGWIT</button>
+  <button onclick="pay('BTC','BSC')">BSC</button>
+  <button onclick="pay('BTC','ETH')">ETH</button>`;
+ payment.innerHTML="";
+}
+
+function usdt(){
+ networks.innerHTML=`
+  <h3>USDT Networks</h3>
+ <button class="btn network" onclick="pay('USDT','TRX')">TRC 20</button>
+ <button class="btn network" onclick="pay('USDT','BSC')">BEP 20</button>
+ <button class="btn network" onclick="pay('USDT','APT')">Aptox</button>
+ <button class="btn network" onclick="pay('USDT','ETH')">ERC20</button>
+ <button class="btn network" onclick="pay('USDT','POL')">Polygon</button>
+ <button class="btn network" onclick="pay('USDT','PLASMA')">Plasma</button>
+ <button class="btn network" onclick="pay('USDT','ARBITRUM')">Arbitrum</button>
+ <button class="btn network" onclick="pay('USDT','SOL')">Solana</button>
+ <button class="btn network" onclick="pay('USDT','CELO')">Celo</button>
+ <button class="btn network" onclick="pay('USDT','KAIA')">Kaia</button>
+ <button class="btn network" onclick="pay('USDT','KAVAEVM')">Kavaevm</button>
+ <button class="btn network" onclick="pay('USDT','DOT')">DOT</button>`;
+ payment.innerHTML="";
+}
+
+function bnb(){
+ networks.innerHTML=`
+  <h3>BNB Networks</h3>
+  <button onclick="pay('BNB','BEP20')">BEP20</button>
+  <button onclick="pay('BNB','OPBNB')">opBNB</button>
+  <button onclick="pay('BNB','ERC20')">ERC20</button>`;
+ payment.innerHTML="";
+}
+
+/* ===== PAYMENT ===== */
+function pay(coin,net){
+ const address=ADDR[coin][net];
+ const qr=`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${address}`;
+
+ payment.innerHTML=`
+  <div class="qr">
+   <h3>${coin} - ${net}</h3>
+   <img src="${qr}">
+   <p id="addr">${address}</p>
+   <button onclick="copy()">Copy Address</button>
+   <p style="color:black">Waiting for payment confirmation...</p>
+  </div>`;
+}
+
+function copy(){
+ navigator.clipboard.writeText(
+  document.getElementById("addr").innerText
+ );
+ alert("Address Copied");
+}
+</script>
+
+</body>
+</html>

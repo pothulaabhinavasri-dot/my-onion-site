@@ -1,0 +1,540 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head><!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+<style>
+    body
+    { 
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    color: #110101;
+
+    /* BACKGROUND IMAGE */
+    background-image: url("images/welcome.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+     p {
+        color:white;}
+    .username,.stats{
+      color:white;
+    .h2{
+        color:white;
+    }
+    .welcome-text {
+    color: white;
+    text-align:center;
+    font-size:bold;
+}
+ .contact-black,
+ .contact-black a {
+    color: #000000 !important;
+    font-weight: 600;
+    position: relative;
+    z-index: 9999;
+}
+.overlay{
+    position:absolute;
+    background: rgba(0,0,0,0.6);
+}
+.contact-black{
+    position: relative;
+    z-index: 9999;
+}
+}
+
+}
+
+
+
+
+    /* Username on left */
+    .username {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        font-weight: bold italic;
+        font-size: 20px;
+    }
+
+    /* Stats on right */
+    .stats {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        text-align: right;
+        font-size: 20px;
+        font-weight: bold italic;
+        line-height: 1.6;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom:30 px;
+    }
+
+    p {
+        max-width: 900px;
+        margin: 0 auto 20px auto;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Username -->
+<div class="username">
+    Welcome, <span id="user"></span>
+</div>
+
+<!-- Right side stats -->
+<div class="stats">
+    USERS: 3224<br>
+    ONLINE: 238<br>
+    TOTAL BB: $32822
+</div>
+<div class="welcome-section">
+   <h2 style="color:white !important;">Welcome to Money Grow</h2>
+</div>
+
+<p>
+The Big Loot Crypto 2026 is creating massive buzz by offering participants a chance
+to earn Bitcoin and USDT rewards through community-driven promotions and engagement
+activities. This opportunity is designed for people who want to enter the crypto
+world easily, explore digital assets, and benefit from reward-based programs without
+complex trading or heavy capital investment.
+</p>
+
+<p>
+Join The Big Loot Crypto movement and be part of a fast-growing digital community
+preparing for the future of finance. This is not about shortcuts, but about smart
+exposure to crypto rewards, awareness, and opportunity. Act early, stay informed,
+and position yourself in the evolving crypto ecosystem where innovation and
+participation open new doors.
+</p>
+
+
+<script>
+    // Show username from localStorage
+    const username = localStorage.getItem("username");
+    document.getElementById("user").textContent =
+        username ? username : "Guest";
+</script>
+
+</body>
+</html>
+<style>
+/* PRODUCTS SECTION */
+.products {
+    margin-top: 80px;
+    padding: 40px;
+}
+
+.products h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #f5f7fa;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card img {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+.card h3,
+.card p,
+.card h2,
+.span {
+    color: black;
+}.contact-text a {
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+
+.card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #0a66c2;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.card button:hover {
+    background: #084d99;
+}
+</style>
+
+<!-- PRODUCTS -->
+<div class="products">
+    <h2 style="color:white">NEW YEAR LOOT</h2>
+
+    <div class="product-grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="images/paypal.png" class="PayPal Logo">
+            <h3>PayPal Account</h3>
+            <p>Balance: $1200</p>
+            <p>Get: $1200</p>
+            <p>Pay: $110</p>
+            <p>Duration: 5 Minutes</p>
+          
+             
+             <button onclick="buyNow( 1200, 110)">
+            Buy Now
+            </button>
+
+ 
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="images/paypal.png" class="PayPal Logo">
+            <h3>PayPal Account</h3>
+            <p>Balance: $1600</p>
+            <p>Get: $1600</p>
+            <p>Pay: $160</p>
+            <p>Duration: 5 Minutes</p>
+           
+           <button onclick="buyNow( 1600, 160)">
+           Buy Now
+            </button>
+
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="images/paypal.png" class="PayPal Logo">
+            <h3>PayPal Account</h3>
+            <p>Balance: $2500</p>
+            <p>Get: $2500</p>
+            <p>Pay: $250</p>
+            <p>Duration: 5 Minutes</p>
+           
+            <button onclick="buyNow( 2500, 250)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="images/paypal.png" class="PayPal Logo">
+            <h3>PayPal Account</h3>
+            <p>Balance: $5200</p>
+            <p>Get: $5200</p>
+            <p>Pay: $500</p>
+            <p>Duration: 5 Minutes</p>
+           
+           <button onclick="buyNow( 5200, 500)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+        </div>
+    <div class="product-grid">
+            <!-- CARD 1 -->
+        <div class="card">
+            <img src="images/theter.png" class="theter Logo">
+            <h3>Tether Wallet</h3>
+            <p>Balance: $1200</p>
+            <p>Get: $1200</p>
+            <p>Pay: $120</p>
+            <p>Duration: 5 Minutes</p>
+           
+            <button onclick="buyNow( 1200, 120)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="images/theter.png" class="theter Logo">
+            <h3>Tether Wallet</h3>
+            <p>Balance: $1500</p>
+            <p>Get: $1500</p>
+            <p>Pay: $150</p>
+            <p>Duration: 5 Minutes</p>
+           
+          <button onclick="buyNow( 1500, 150)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="images/theter.png" class="theter Logo">
+            <h3>Tether Wallet</h3>
+            <p>Balance: $3000</p>
+            <p>Get: $3000</p>
+            <p>Pay: $300</p>
+            <p>Duration: 5 Minutes</p>
+           
+          <button onclick="buyNow( 3000, 300)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="images/theter.png" class="theter Logo">
+            <h3>Tether Wallet</h3>
+            <p>Balance: $12000</p>
+            <p>Get: $12000</p>
+            <p>Pay: $1200</p>
+            <p>Duration: 5 Minutes</p>
+           
+           <button onclick="buyNow( 12000, 1200)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+    </div>
+   <div class="product-grid">  
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="images/bitcoin.png" class="Bitcoin Logo">
+            <h3>Bitcoin Wallet</h3>
+            <p>Buy: 0.0017</p>
+            <p>USDT: $150</p>
+            <p>Get: 0.017</p>
+            <p>USDT:$1500</p>
+            <p>Duration: 10 Minutes</p>
+           
+           <button onclick="buyNow( 0.0017, 0.017)">
+           Buy Now
+            </button>
+
+
+
+            
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="images/bitcoin.png" class="Bitcoin Logo">
+            <h3>Bitcoin Wallet</h3>
+            <p>Buy: 0.0028</p>
+            <p>USDT: $250</p>
+            <p>Get: 0.027</p>
+            <p>USDT: $2400</p>
+            <p>Duration: 10 Minutes</p>
+            
+            <button onclick="buyNow( 0.0028, 0.027)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="images/bitcoin.png" class="Bitcoin Logo">
+            <h3>Bitcoin Wallet</h3>
+            <p>Buy: 0.0057</p>
+            <p>USDT: $500</p>
+            <p>Get: 0.061</p>
+            <p>USDT: $5400</p>
+            <p>Duration: 10 Minutes</p>
+
+           <button onclick="buyNow( 0.0057, 0.061)">
+           Buy Now
+            </button>
+
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="images/bitcoin.png" class="Bitcoin Logo">
+            <h3>Bitcoin Wallet</h3>
+            <p>Buy:0.017</p>
+            <p>USDT: $1500</p>
+            <p>Get: 0.15</p>
+            <p>USDT: $13000</p>
+            <p>Duration: 10 Minutes</p>
+           
+            <button onclick="buyNow(0.017, 0.15)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+        </div>
+        
+  <div class="product-grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="images/cash.png" class="Cash Logo">
+            <h3>Cash Wallet</h3>
+            <p>Balance: $1800</p>
+            <p>Get: $1800</p>
+            <p>Pay: $180</p>
+            <p>Duration: 5 Minutes</p>
+           
+           <button onclick="buyNow( 1800, 180)">
+           Buy Now
+            </button>
+
+
+           
+            
+
+          </a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="images/cash.png" class="Cash  Logo">
+            <h3>Cash  Wallet</h3>
+            <p>Balance: $2400</p>
+            <p>Get: $2400</p>
+            <p>Pay: $240</p>
+            <p>Duration: 5 Minutes</p>
+            
+           <button onclick="buyNow( 2400, 240)">
+           Buy Now
+            </button>
+
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="images/cash.png" class="Cash Logo">
+            <h3>Cash Wallet</h3>
+            <p>Balance: $5000</p>
+            <p>Get: $5000</p>
+            <p>Pay: $500</p>
+            <p>Duration: 5 Minutes</p>
+            
+           <button onclick="buyNow( 5000, 500)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="images/cash.png" class="Cash Logo">
+            <h3>Cash Wallet</h3>
+            <p>Balance: $10000</p>
+            <p>Get: $10000</p>
+            <p>Pay: $1000</p>
+            <p>Duration: 5 Minutes</p>
+        
+            <button onclick="buyNow(10000, 1000)">
+           Buy Now
+            </button>
+
+
+
+        </div>
+  </div>
+      <!-- Footer Section -->
+<footer class="footer">
+    <p style="color:#000000;z-index:9999;position:relative;">
+        If you need any information, contact this mail:
+        <a href="mailto:kewinsproton@mail.com">kewinsproton@mail.com</a>
+    </p>
+
+    <h3 class="sponsor-title">Our Sponsors</h3>
+
+    <div class="sponsors">
+
+        <div class="sponsor">
+            <img src="images/barclays.png" alt="Barclays">
+            <span>Barclays</span>
+        </div>
+        <div class="sponsor">
+            <img src="images/rbs.png" alt="RBS">
+            <span>RBS</span>
+        </div>
+    </div>
+</footer>
+</div>
+<script src="script.js"></script>
+<script>
+  function goToTransaction() {
+    window.location.href = "transaction.html";
+  }
+</script>
+<script>
+function generateTransactionId() {
+    return "TXN" + Date.now() + Math.floor(Math.random() * 1000);
+}
+
+function buyNow(amount, pay) {
+    const txnId = generateTransactionId();
+
+    window.location.href =
+        `transaction.html?txn=${txnId}&amount=${amount}&pay=${pay}`;
+}
+</script>
+</body>
+</html>
+
+
+
+

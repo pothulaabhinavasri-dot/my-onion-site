@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment Received</title>
+<meta charset="UTF-8">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    /* BACKGROUND IMAGE */
+    background-image: url("images/Succ.jpg");
+    background-size: cover;        /* Fill screen */
+    background-position: center;   /* Center image */
+    background-repeat: no-repeat;  /* No repeat */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-box {
+    max-width: 500px;
+    margin: 120px auto;
+    background: rgb(97, 7, 69);
+    padding: 40px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(229, 224, 224, 0.907);
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #28a745;
+    margin-bottom: 30px;
+}
+
+.success-box h2 {
+    margin-bottom: 30px;
+}
+
+.success-box p {
+    color: #beb8b8;
+    margin-bottom: 30px;
+}
+
+.success-box button {
+    padding: 12px 24px;
+    font-size: 20px;
+    background: #0b5ed7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.success-box button:hover {
+    background: #084298;
+}
+</style>
+</head>
+
+<body>
+
+<div class="success-box">
+    <div class="success-icon">✔</div>
+    <h2>Payment Received</h2>
+    <p>Your transaction is being processed.</p>
+    <p>Please wait while we verify your payment.</p>
+
+    <button onclick="goHome()">Return to Dashboard</button>
+</div>
+
+<script>
+function goHome() {
+    window.location.href = "welcome.html";
+}
+<div style="text-align:center; margin-top:30px;">
+    <button onclick="paymentReceived()">I Have Paid</button>
+</div>
+
+
+function paymentReceived() {
+    window.location.href = "success.html";
+}
+</script>
+
+
+
+</body>
+</html>

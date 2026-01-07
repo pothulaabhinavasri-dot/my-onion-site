@@ -1,0 +1,343 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:#eee9e9ef  ;
+    background-image: repeating-linear-gradient(
+        45deg,          
+        #e0e0e0 10px,        
+        #e0e0e0 10px,    
+        #eee9e9ef  10px,   
+        #eee9e9ef 
+    );
+
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin: 40px 0 20px 0;
+    color: #e6e9ec;
+    font-weight: bold;
+}
+
+.paypal-container {
+  display: flex;
+  gap: 25px;              /* space between cards */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 280px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+}
+
+.card {
+    background-color: #ffffff;
+    border: 2px solid #2c3e50;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px; /* same as PayPal cards */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.card-logo {
+    width: 100px; /* adjust size */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+.card-btn {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+    background-color: #16a085;
+}
+
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 35px 0;
+    letter-spacing: 2px;
+}
+
+/* Card container (if you use one) */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* Card design */
+.card {
+    background: #ffffff;
+    width: 260px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 16px;
+
+    /* Attractive border */
+    border: 2px solid #0b5ed7;
+    box-shadow: 0 0 15px rgba(11, 94, 215, 0.3);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(11, 94, 215, 0.6);
+}
+
+/* PayPal logo size increase */
+.paypal-logo {
+    width: 120px;   /* increased size */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Button style */
+.card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #0b5ed7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.card button:hover {
+    background: #084298;
+}
+.footer {
+    margin-top: 80px;
+    padding: 40px 20px;
+    background: #f5f5f5;
+    text-align: center;
+    border-top: 2px solid #ddd;
+}
+
+.contact-text {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.contact-text a {
+    color: #0b5ed7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+}
+
+.sponsor-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sponsors {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.sponsor img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.sponsor span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.network-list {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.network-list button {
+  margin: 6px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.network-list button:hover {
+  background: #222;
+}
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* CENTER horizontally */
+  justify-content: center;
+  gap: 40px;             /* space between cards */
+}
+
+.card {
+  width: 420px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* SUCCESS CARD */
+.success-card {
+  text-align: center;
+}
+
+/* Inputs */
+.success-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Button */
+.success-card button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #2d7cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#successCard {
+  display: none;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TIMER */
+.timer {
+  font-size: 35px;
+  margin-bottom: 25px;
+  color: #0e0c00;
+}
+
+/* NETWORK BUTTONS */
+.networks {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.networks button {
+  margin: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  color: #000;
+  font-weight: bold;
+}
+
+/* PAYMENT CARD */
+.payment {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.qr {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  width: 320px;
+}
+
+.qr img {
+  margin: 15px 0;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.qr p {
+  word-break: break-all;
+  font-size: 14px;
+}
+
+.copy {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background: #00d4aa;
+}
